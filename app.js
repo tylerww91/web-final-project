@@ -9,9 +9,9 @@ import { renderPosts } from './render-utils.js';
 const errorDisplay = document.getElementById('error-display');
 const conversionForm = document.getElementById('conversion-form');
 const conversionSelect = document.getElementById('conversion-select');
-const conversionResult = document.getElementById('conversion-result');
-const conversionResult2 = document.getElementById('conversion-result-2');
-const conversionResult3 = document.getElementById('conversion-result-3');
+// const conversionResult = document.getElementById('conversion-result');
+// const conversionResult2 = document.getElementById('conversion-result-2');
+// const conversionResult3 = document.getElementById('conversion-result-3');
 const conversionList = document.getElementById('conversion-list');
 
 /* State */
@@ -46,8 +46,8 @@ conversionForm.addEventListener('submit', async (e) => {
     let x = null;
     let x2 = null;
     let factorWeight = null;
-    // let factorId = null;
-    // let factorPlural = null;
+    let factorId = null;
+    let factorPlural = null;
 
     for (const item of items) {
         if (conversionSelect.value === item.title) {
@@ -77,6 +77,9 @@ conversionForm.addEventListener('submit', async (e) => {
         }
     }
 
+    x = `${refTitle} is equal to approximately ${x} ${factorPlural}`;
+    x2 = `A ${conversionSelect.value} is approximately ${x2} ${refTitle}s`;
+
     const post = {
         title: refTitle,
         weight: refWeight,
@@ -84,6 +87,7 @@ conversionForm.addEventListener('submit', async (e) => {
         weight_factor: factorWeight,
         result_1: x,
         result_2: x2,
+        factor_id: factorId,
     };
 
     // console.log(post);
