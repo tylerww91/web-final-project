@@ -52,8 +52,10 @@ conversionForm.addEventListener('submit', async (e) => {
     for (const item of items) {
         if (conversionSelect.value === item.title) {
             factorWeight = item.weight;
-            let x = refWeight / item.weight;
-            let x2 = item.weight / refWeight;
+            x = refWeight / item.weight;
+            x2 = item.weight / refWeight;
+            factorPlural = item.title_pl;
+            factorId = item.id;
             if (x < 0.0001) {
                 x = x.toFixed(6);
                 x2 = x2.toFixed(0);

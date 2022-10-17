@@ -41,3 +41,7 @@ export async function getItems() {
 export async function getPosts() {
     return await client.from('conv-posts').select('*').order('created_at', { ascending: false });
 }
+
+export async function getPost(id) {
+    return await client.from('conv-posts').select('*').eq('id', id).single();
+}
