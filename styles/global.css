@@ -61,6 +61,10 @@ main {
     border-radius: 100%;
 }
 
+.preview-image {
+    height: 80px;
+}
+
 .error {
     min-height: 1em;
     color: red;
