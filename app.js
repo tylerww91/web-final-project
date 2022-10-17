@@ -43,17 +43,17 @@ conversionForm.addEventListener('submit', async (e) => {
     const refTitle = formData.get('title');
     const refWeight = formData.get('weight');
 
-    // let x = null;
-    // let x2 = null;
-    // let factorWeight = null;
+    let x = null;
+    let x2 = null;
+    let factorWeight = null;
     // let factorId = null;
     // let factorPlural = null;
 
     for (const item of items) {
         if (conversionSelect.value === item.title) {
+            factorWeight = item.weight;
             let x = refWeight / item.weight;
             let x2 = item.weight / refWeight;
-
             if (x < 0.0001) {
                 x = x.toFixed(6);
                 x2 = x2.toFixed(0);
@@ -71,19 +71,22 @@ conversionForm.addEventListener('submit', async (e) => {
                 x2 = x2.toFixed(6);
             }
 
-            //     conversionResult.textContent = `For ${refTitle} at ${refWeight} lbs...`; // we can mess with this wording!!!!!!!!!!!!!!!!!!!!!!!!
-            //     conversionResult2.textContent = `${refTitle} is approximately ${x} ${item.title_pl}`;
-            //     conversionResult3.textContent = `a ${item.title} is approximately ${x2} ${refTitle}s`;
+            // conversionResult.textContent = `For ${refTitle} at ${refWeight} lbs...`; // we can mess with this wording!!!!!!!!!!!!!!!!!!!!!!!!
+            // conversionResult2.textContent = `${refTitle} is approximately ${x} ${item.title_pl}`;
+            // conversionResult3.textContent = `a ${item.title} is approximately ${x2} ${refTitle}s`;
         }
     }
 
     const post = {
         title: refTitle,
         weight: refWeight,
-        conversion: conversionSelect.value,
+        // conversion: conversionSelect.value,
+        weight_factor: factorWeight,
+        result_1: x,
+        result_2: x2,
     };
 
-    console.log(post);
+    // console.log(post);
     const response = await createPost(post);
     //   conversionForm.error = response.error;
     conversionForm.reset();
@@ -92,7 +95,9 @@ conversionForm.addEventListener('submit', async (e) => {
     if (error) {
         displayError();
     } else {
-        // location.assign('/');
+        const postList = await getPosts();
+        posts = postList.data;
+        displayPosts();
     }
 });
 
