@@ -1,8 +1,9 @@
 /* Imports */
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
-import { createPost, getItems } from '../fetch-utils.js';
+import { createPost, getItems, getPosts } from '../fetch-utils.js';
 import { renderConversionOption } from '../render-utils.js';
+import { renderPosts } from './render-utils.js';
 
 /* Get DOM Elements */
 const errorDisplay = document.getElementById('error-display');
@@ -11,12 +12,13 @@ const conversionSelect = document.getElementById('conversion-select');
 const conversionResult = document.getElementById('conversion-result');
 const conversionResult2 = document.getElementById('conversion-result-2');
 const conversionResult3 = document.getElementById('conversion-result-3');
+const conversionList = document.getElementById('conversion-list');
 
 /* State */
 
 let error = null;
 let items = null;
-
+let posts = [];
 /* Events */
 
 window.addEventListener('load', async () => {
@@ -24,8 +26,12 @@ window.addEventListener('load', async () => {
     items = conversionOption.data;
     console.log('items', items);
 
+    const conversionList = await getPosts();
+    posts = conversionList.data;
+
     if (!error) {
         displayConversionOptions();
+        displayPosts();
     }
 });
 
@@ -37,11 +43,11 @@ conversionForm.addEventListener('submit', async (e) => {
     const refTitle = formData.get('title');
     const refWeight = formData.get('weight');
 
-    let x = null;
-    let x2 = null;
-    let factorWeight = null;
-    let factorId = null;
-    let factorPlural = null;
+    // let x = null;
+    // let x2 = null;
+    // let factorWeight = null;
+    // let factorId = null;
+    // let factorPlural = null;
 
     for (const item of items) {
         if (conversionSelect.value === item.title) {
@@ -65,9 +71,9 @@ conversionForm.addEventListener('submit', async (e) => {
                 x2 = x2.toFixed(6);
             }
 
-            conversionResult.textContent = `For ${refTitle} at ${refWeight} lbs...`; // we can mess with this wording!!!!!!!!!!!!!!!!!!!!!!!!
-            conversionResult2.textContent = `${refTitle} is approximately ${x} ${item.title_pl}`;
-            conversionResult3.textContent = `a ${item.title} is approximately ${x2} ${refTitle}s`;
+            //     conversionResult.textContent = `For ${refTitle} at ${refWeight} lbs...`; // we can mess with this wording!!!!!!!!!!!!!!!!!!!!!!!!
+            //     conversionResult2.textContent = `${refTitle} is approximately ${x} ${item.title_pl}`;
+            //     conversionResult3.textContent = `a ${item.title} is approximately ${x2} ${refTitle}s`;
         }
     }
 
@@ -104,5 +110,14 @@ function displayConversionOptions() {
     for (const item of items) {
         const option = renderConversionOption(item);
         conversionSelect.append(option);
+    }
+}
+
+function displayPosts() {
+    conversionList.innerHTML = '';
+
+    for (const post of posts) {
+        const postEl = renderPosts(post);
+        conversionList.append(postEl);
     }
 }

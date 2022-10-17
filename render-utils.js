@@ -4,3 +4,25 @@ export function renderConversionOption(item) {
     option.textContent = item.title;
     return option;
 }
+
+export function renderPosts(post) {
+    const li = document.createElement('li');
+
+    const a = document.createElement('a');
+    a.href = `/post/?id=${post.id}`;
+
+    const p = document.createElement('p');
+    p.textContent = `For ${post.title} at ${post.weight} lbs...`;
+
+    const p2 = document.createElement('p');
+    p2.textContent = post.result_1;
+
+    const p3 = document.createElement('p');
+    p3.textContent = post.result_2;
+
+    a.append(p, p2, p3);
+
+    li.append(a);
+
+    return li;
+}

@@ -37,3 +37,7 @@ export async function getItems() {
 
     return await client.from('conversion').select('*').order('title');
 }
+
+export async function getPosts() {
+    return await client.from('conv-posts').select('*').order('created_at', { ascending: false });
+}
