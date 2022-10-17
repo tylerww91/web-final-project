@@ -35,8 +35,5 @@ export async function createPost(post) {
 export async function getItems() {
     console.log('firing');
 
-    let query = client.from('conversion').select('*').order('title');
-    const response = await query;
-
-    return response;
+    return await client.from('conversion').select('*').order('title');
 }
