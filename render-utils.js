@@ -48,3 +48,20 @@ export function renderProfile(profile) {
     li.append(h2, img);
     return li;
 }
+
+export function renderProfilePosts(post) {
+    const li = document.createElement('li');
+
+    const p = document.createElement('p');
+    p.textContent = `For ${post.title} at ${post.weight} lbs...`;
+
+    const p2 = document.createElement('p');
+    p2.textContent = post.result_1;
+
+    const p3 = document.createElement('p');
+    p3.textContent = post.result_2;
+
+    li.append(p, p2, p3);
+
+    return li;
+}
