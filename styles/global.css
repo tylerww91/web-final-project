@@ -18,6 +18,8 @@ body {
     background: var(--background);
     display: grid;
     grid-template-rows: auto 1fr;
+    /* background-image: URL(/assets/background.jpg);
+    background-size: cover; */
 }
 
 .page-header {

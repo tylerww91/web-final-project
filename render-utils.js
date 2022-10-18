@@ -32,3 +32,19 @@ export function renderComment(comment) {
     li.textContent = comment.text;
     return li;
 }
+
+export function renderProfile(profile) {
+    const li = document.createElement('li');
+    const h2 = document.createElement('h2');
+    h2.textContent = profile.user_name;
+
+    // const p = document.getElementById('p');
+    // p.textContent = profile.color;
+
+    const img = document.createElement('img');
+    img.src = profile.image_url;
+    // img.classList.add('avatar-image');
+
+    li.append(h2, img);
+    return li;
+}

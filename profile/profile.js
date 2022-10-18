@@ -1,16 +1,34 @@
 import '../auth/user.js';
-import { updateProfile } from '../fetch-utils.js';
+import { getProfile, updateProfile } from '../fetch-utils.js';
 //add to fetch after merge//
 import { uploadImage } from '../fetch-utils.js';
 import { getUser } from '../fetch-utils.js';
+import { renderPosts, renderProfile } from '../render-utils.js';
 
 const errorDisplay = document.getElementById('error-display');
 const profileForm = document.getElementById('profile-form');
 const uploadButton = document.getElementById('avatar-input');
 const previewImage = document.getElementById('preview-image');
+const profileList = document.getElementById('profile-list');
 
 let error = null;
 let user = getUser();
+let profile = null;
+let profiles = [];
+
+window.addEventListener('load', async () => {
+    const response = await getProfile(user.id);
+    error = response.error;
+    profile = response.data;
+    console.log('profile', profile);
+
+    if (error) {
+        displayError();
+    }
+    if (profile) {
+        displayProfile();
+    }
+});
 
 profileForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -41,7 +59,7 @@ profileForm.addEventListener('submit', async (e) => {
     if (error) {
         displayError();
     } else {
-        location.assign('/');
+        // location.assign('/');
     }
 });
 
@@ -57,4 +75,14 @@ uploadButton.addEventListener('change', () => {
 
 function displayError() {
     errorDisplay.textContent = error.message;
+}
+
+function displayProfile() {
+    profileList.innerHTML = '';
+    // for (const profile of profiles) {
+    console.log('profile in display', profiles);
+
+    const profileEl = renderProfile(profile);
+    profileList.append(profileEl);
+    // }
 }
