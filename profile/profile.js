@@ -1,8 +1,7 @@
 import '../auth/user.js';
-import { createProfile } from '../fetch-utils.js';
+import { updateProfile } from '../fetch-utils.js';
 //add to fetch after merge//
 import { uploadImage } from '../fetch-utils.js';
-//add to fetch after merge//
 import { getUser } from '../fetch-utils.js';
 
 const errorDisplay = document.getElementById('error-display');
@@ -29,13 +28,13 @@ profileForm.addEventListener('submit', async (e) => {
     }
 
     const profile = {
-        username: formData.get('username'),
+        user_name: formData.get('username'),
         color: formData.get('color'),
         image_url: url,
         user_id: user.id,
     };
 
-    const response = await createProfile(profile);
+    const response = await updateProfile(profile);
 
     error = response.error;
 
