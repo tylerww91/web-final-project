@@ -31,6 +31,7 @@
         <link rel="stylesheet" href="/styles/global.css" />
         <link rel="stylesheet" href="/styles/form.css" />
         <link rel="stylesheet" href="/styles/conversions.css" />
+        <link rel="stylesheet" href="/styles/profile.css" />
         <!-- add link for page specific css -->
     </head>
 
@@ -43,42 +44,57 @@
         </header>
 
         <main>
-            <div class="profile-container">
-                <form id="profile-form" class="profile-form">
-                    <h3>Profile **UPDATE**</h3>
-                    <input
-                        name="username"
-                        type="text"
-                        id="username-input"
-                        class="username-input"
-                        placeholder="Username"
-                        required
-                    />
-                    <select name="color" id="color-select" class="color-select" required>
-                        <option value="Pick" disabled selected>Choose a text color</option>
-                        <option value="blue" class="blue">Blue</option>
-                        <option value="purple" class="pink">Purple</option>
-                        <option value="green" class="green">Green</option>
-                        <option value="red" class="red">Red</option>
-                        <option value="orange" class="pink">Orange</option>
-                        <option value="pink" class="pink">Pink</option>
-                    </select>
-                    <label>
-                        <div>Image Upload</div>
-                        <input name="avatar" type="file" class="avatar-input" id="avatar-input" />
-                    </label>
-                    <img
-                        src="../assets/user-avatar.png"
-                        alt="image preview"
-                        id="preview-image"
-                        class="preview-image"
-                    />
-                    <button id="profile-create-button" class="profile-create-button">Create</button>
-                </form>
-                <p id="error-display" class="error"></p>
-            </div>
-            
-            
+            <section>
+                <div class="profile-container">
+                    <form id="profile-form" class="profile-form">
+                        <h3>Profile **UPDATE**</h3>
+                        <input
+                            name="username"
+                            type="text"
+                            id="username-input"
+                            class="username-input"
+                            placeholder="Username"
+                            required
+                        />
+                        <select name="color" id="color-select" class="color-select" required>
+                            <option value="Pick" disabled selected>Choose a text color</option>
+                            <option value="blue" class="blue">Blue</option>
+                            <option value="purple" class="pink">Purple</option>
+                            <option value="green" class="green">Green</option>
+                            <option value="red" class="red">Red</option>
+                            <option value="orange" class="pink">Orange</option>
+                            <option value="pink" class="pink">Pink</option>
+                        </select>
+                        <label>
+                            <div>Image Upload</div>
+                            <input
+                                name="avatar"
+                                type="file"
+                                class="avatar-input"
+                                id="avatar-input"
+                            />
+                        </label>
+                        <img
+                            src="../assets/user-avatar.png"
+                            alt="image preview"
+                            id="preview-image"
+                            class="preview-image"
+                        />
+                        <button id="profile-create-button" class="profile-create-button">
+                            Update
+                        </button>
+                    </form>
+                    <p id="error-display" class="error"></p>
+                </div>
+            </section>
+            <section id="profile-details">
+                <ul id="profile-list"></ul>
+                <ul id="logged-list">
+                    <li>sdad</li>
+                    <li>sdsds</li>
+                    <li>sdsd</li>
+                </ul>
+            </section>
         </main>
     </body>
 </html>

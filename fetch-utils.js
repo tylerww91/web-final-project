@@ -59,7 +59,7 @@ export async function uploadImage(bucketName, imagePath, imageFile) {
     const bucket = client.storage.from(bucketName);
 
     const response = await bucket.upload(imagePath, imageFile, {
-        cacheControl: '3600', 
+        cacheControl: '3600',
         upsert: true,
     });
     if (response.error) {
@@ -71,4 +71,16 @@ export async function uploadImage(bucketName, imagePath, imageFile) {
 
 export async function updateProfile(profile) {
     return await client.from('profiles').upsert(profile).single().eq('user_id', profile.user_id);
+}
+
+export async function getProfile(id) {
+    return await client.from('profiles').select('*').eq('id', id).maybeSingle();
+}
+// check this
+export async function getProfilePosts(id) {
+    return await client
+        .from('conv-posts')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .eq('user_id', id);
 }
