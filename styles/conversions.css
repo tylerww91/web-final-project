@@ -1,7 +1,6 @@
 .conversion-list {
     height: 700px;
     width: 1000px;
-    background: rgb(91, 5, 255);
     margin: 30px;
 }
 a {
@@ -18,4 +17,5 @@ main {
 li {
     padding: 10px;
     border: 10px;
+    background: rgb(91, 5, 255);
 }
