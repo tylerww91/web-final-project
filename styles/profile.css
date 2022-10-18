@@ -20,10 +20,19 @@ main {
 }
 
 .logged-list {
-    background-color: aqua;
+    /* background-color: aqua; */
+    margin-top: 50px;
 }
 
 /* .image {
     display: flex;
     margin-bottom: 100px;
 } */
+
+.profile-post-title {
+    font-size: 2rem;
+}
+
+.profile-data {
+    margin-bottom: 400px;
+}

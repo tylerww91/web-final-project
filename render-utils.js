@@ -54,6 +54,7 @@ export function renderProfilePosts(post) {
 
     const p = document.createElement('p');
     p.textContent = `For ${post.title} at ${post.weight} lbs...`;
+    p.classList.add('profile-post-title');
 
     const p2 = document.createElement('p');
     p2.textContent = post.result_1;
