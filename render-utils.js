@@ -26,3 +26,9 @@ export function renderPosts(post) {
 
     return li;
 }
+
+export function renderComment(comment) {
+    const li = document.createElement('li');
+    li.textContent = comment.text;
+    return li;
+}
