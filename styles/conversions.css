@@ -1,6 +1,21 @@
 .conversion-list {
     height: 700px;
     width: 1000px;
-    background: plum;
+    background: rgb(91, 5, 255);
     margin: 30px;
+}
+a {
+    color: white;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin: auto;
+}
+
+li {
+    padding: 10px;
+    border: 10px;
 }

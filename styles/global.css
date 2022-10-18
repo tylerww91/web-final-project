@@ -73,3 +73,6 @@ main {
 .hidden {
     display: none;
 }
+a {
+    color: white;
+}
