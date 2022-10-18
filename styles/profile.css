@@ -1,0 +1,24 @@
+main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 50px;
+}
+
+#profile-details {
+    width: 1000px;
+    height: 700px;
+    background: purple;
+
+    display: grid;
+    grid-template-rows: 150px 1fr;
+}
+.avatar-image {
+    width: 80px;
+    border-radius: 50%;
+    height: 80px;
+    object-fit: cover;
+}
+
+.logged-list {
+    background-color: aqua;
+}

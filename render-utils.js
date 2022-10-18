@@ -43,7 +43,7 @@ export function renderProfile(profile) {
 
     const img = document.createElement('img');
     img.src = profile.image_url;
-    // img.classList.add('avatar-image');
+    img.classList.add('avatar-image');
 
     li.append(h2, img);
     return li;
