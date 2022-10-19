@@ -1,6 +1,6 @@
 /* imports */
 import '../auth/user.js';
-import { getPost, createComment, onMessage, getComment } from '../fetch-utils.js';
+import { getPost, createComment, onMessage, getComment, getUser } from '../fetch-utils.js';
 import { renderComment } from '../render-utils.js';
 /*dom elements */
 const errorDisplay = document.getElementById('error-display');
@@ -13,6 +13,9 @@ const commentList = document.getElementById('comment-list');
 /* state */
 let error = null;
 let post = null;
+let profile = null;
+
+const user = getUser();
 /*event listener*/
 
 window.addEventListener('load', async () => {
@@ -35,7 +38,7 @@ window.addEventListener('load', async () => {
     onMessage(post.id, async (payload) => {
         const commentId = payload.new.id;      
         const postResponse = await getComment(commentId);
-
+        console.log(postResponse);
         error = postResponse.error;
 
         if (error) {
@@ -58,6 +61,7 @@ commentForm.addEventListener('submit', async (e) => {
     const insertComment = {
         text: formData.get('comment'),
         post_id: post.id,
+        user_id: user.id,
     };
 
     const response = await createComment(insertComment);
@@ -66,8 +70,6 @@ commentForm.addEventListener('submit', async (e) => {
     if (error) {
         displayError();
     } else {
-        const comment = response.data;
-        post.comments.unshift(comment);
         displayComments();
         commentForm.reset();
     }
@@ -79,7 +81,7 @@ function displayComments() {
     commentList.innerHTML = '';
 
     for (const comment of post.comments) {
-        const commentEl = renderComment(comment);
+        const commentEl = renderComment(comment, profile);
         commentList.append(commentEl);
     }
 }

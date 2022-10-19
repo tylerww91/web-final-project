@@ -27,9 +27,25 @@ export function renderPosts(post) {
     return li;
 }
 
-export function renderComment(comment) {
+export function renderComment(comment, profile) {
     const li = document.createElement('li');
-    li.textContent = comment.text;
+    // li.textContent = comment.text;
+
+    const p = document.createElement('p');
+    p.textContent = comment.text;
+
+    const h2 = document.createElement('h2');
+    h2.textContent = profile.user_name;
+    h2.classList.add(`${profile.color}`);
+
+    const img = document.createElement('img');
+    img.src = profile.image_url;
+    img.classList.add('avatar-image');
+    if (profile.image_url.length < 111) {
+        img.src = '/assets/user-avatar.png';
+    }
+
+    li.append(h2, img, p);
     return li;
 }
 
