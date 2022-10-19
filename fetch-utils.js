@@ -33,8 +33,6 @@ export async function createPost(post) {
 }
 
 export async function getItems() {
-    console.log('firing');
-
     return await client.from('conversion').select('*').order('title');
 }
 
@@ -75,4 +73,12 @@ export async function updateProfile(profile) {
 
 export async function getProfile(id) {
     return await client.from('profiles').select('*').eq('id', id).maybeSingle();
+}
+// check this
+export async function getProfilePosts(id) {
+    return await client
+        .from('conv-posts')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .eq('user_id', id);
 }

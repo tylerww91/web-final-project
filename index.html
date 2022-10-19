@@ -8,7 +8,7 @@
 
         <!-- title and favicon -->
         <title>Useful Conversions</title>
-        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+        <link rel="icon" type="image/x-icon" href="/assets/color-scheme/favicon.png" />
 
         <!-- js -->
         <script
@@ -31,16 +31,25 @@
         <link rel="stylesheet" href="/styles/global.css" />
         <link rel="stylesheet" href="/styles/form.css" />
         <link rel="stylesheet" href="/styles/conversions.css" />
+        <link rel="stylesheet" href="/styles/profile.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&display=swap"
+            rel="stylesheet"
+        />
+
         <!-- add link for page specific css -->
     </head>
 
     <body>
         <header class="page-header">
-            <img class="logo" src="/assets/html_css_js.png" alt="logo" />
-            <p class="title">Useful Conversions</p>
+            <img class="logo" src="/assets/color-scheme/favicon.png" alt="logo" />
+            <p class="title">Useless Conversions</p>
             <nav>
                 <a href="/">Home</a>
-                <a href="/profile">Profile</a>
+                <a id="profile-link" href="/profile">Profile</a>
                 <a id="sign-out-link" href="auth">Sign Out</a>
             </nav>
         </header>
@@ -72,19 +81,21 @@
                 </form>
                 <p id="error-display"></p>
             </section>
-
+            <div class="image"><img src="./assets/professor.png" /></div>
             <section id="logged-section">
                 <p id="conversion-result"></p>
                 <p id="conversion-result-2"></p>
                 <p id="conversion-result-3"></p>
-                <ul id="conversion-list" class="conversion-list">
-                    <li>kevin's weight in gold</li>
-                    <li>kevin's weight in gold</li>
-                    <li>kevin's weight in gold</li>
-                    <li>kevin's weight in gold</li>
-                    <li>kevin's weight in gold</li>
-                    <li>kevin's weight in gold</li>
-                </ul>
+                <div class="conversion-container">
+                    <ul id="conversion-list" class="conversion-list">
+                        <li>kevin's weight in gold</li>
+                        <li>kevin's weight in gold</li>
+                        <li>kevin's weight in gold</li>
+                        <li>kevin's weight in gold</li>
+                        <li>kevin's weight in gold</li>
+                        <li>kevin's weight in gold</li>
+                    </ul>
+                </div>
             </section>
         </main>
     </body>

@@ -1,12 +1,15 @@
 .conversion-list {
-    height: 700px;
-    width: 1000px;
+    height: 680px;
+    width: 90%;
     margin: 30px;
-    background-image: URL(/assets/background.jpg);
+    /* background-image: URL(/assets/blackboard.png); */
     background-size: cover;
     overflow-y: scroll;
-    border: 10px solid brown;
     padding: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
     /* box-shadow: 0px 0px 10px 0px black; */
 }
 a {
@@ -18,11 +21,31 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+    width: 1900px;
     margin: auto;
 }
 
 li {
-    padding: 10px;
+    padding: 50px;
     border: 10px;
     /* background: rgb(91, 5, 255); */
+    border-bottom: dotted;
+    font-size: 25px;
+    margin: 50px 50px;
+}
+
+.image {
+    z-index: 1;
+    padding-top: 20px;
+}
+
+.conversion-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 800px;
+    width: 1200px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-size: cover;
+    background-image: URL(/assets/blackboard.png);
 }

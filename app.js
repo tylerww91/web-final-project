@@ -4,27 +4,26 @@ import './auth/user.js';
 import { createPost, getItems, getPosts } from '../fetch-utils.js';
 import { renderConversionOption } from '../render-utils.js';
 import { renderPosts } from './render-utils.js';
+// import { getUser } from './fetch-utils.js';
 
 /* Get DOM Elements */
 const errorDisplay = document.getElementById('error-display');
 const conversionForm = document.getElementById('conversion-form');
 const conversionSelect = document.getElementById('conversion-select');
-// const conversionResult = document.getElementById('conversion-result');
-// const conversionResult2 = document.getElementById('conversion-result-2');
-// const conversionResult3 = document.getElementById('conversion-result-3');
 const conversionList = document.getElementById('conversion-list');
+// const profileLink = document.getElementById('profile-link');
 
 /* State */
-
+// let user = getUser();
 let error = null;
 let items = null;
 let posts = [];
+// let profileThing = null;
 /* Events */
 
 window.addEventListener('load', async () => {
     const conversionOption = await getItems();
     items = conversionOption.data;
-    console.log('items', items);
 
     const conversionList = await getPosts();
     posts = conversionList.data;
@@ -33,6 +32,18 @@ window.addEventListener('load', async () => {
         displayConversionOptions();
         displayPosts();
     }
+
+    // const profileData = await getProfile(user.id);
+    // profileThing = profileData.data;
+    // // console.log(profileThing);
+    // const profile = {
+    //     user_name: profileThing.user_name,
+    //     image_url: profileThing.image_url,
+    // };
+
+    // if (profile) {
+
+    // }
 });
 
 conversionForm.addEventListener('submit', async (e) => {
@@ -72,10 +83,6 @@ conversionForm.addEventListener('submit', async (e) => {
                 x = x.toFixed(0);
                 x2 = x2.toFixed(6);
             }
-
-            // conversionResult.textContent = `For ${refTitle} at ${refWeight} lbs...`; // we can mess with this wording!!!!!!!!!!!!!!!!!!!!!!!!
-            // conversionResult2.textContent = `${refTitle} is approximately ${x} ${item.title_pl}`;
-            // conversionResult3.textContent = `a ${item.title} is approximately ${x2} ${refTitle}s`;
         }
     }
 

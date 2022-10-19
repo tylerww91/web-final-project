@@ -8,7 +8,7 @@
 
         <!-- title and favicon -->
         <title>Supabase Web App</title>
-        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+        <link rel="icon" type="image/x-icon" href="/assets/color-scheme/favicon.png" />
 
         <!-- js -->
         <script
@@ -31,18 +31,21 @@
         <link rel="stylesheet" href="/styles/global.css" />
         <link rel="stylesheet" href="/styles/form.css" />
         <link rel="stylesheet" href="/styles/conversions.css" />
+        <link rel="stylesheet" href="/styles/profile.css" />
         <!-- add link for page specific css -->
     </head>
 
     <body>
         <header class="page-header">
+            <img class="logo" src="/assets/color-scheme/favicon.png" alt="logo" />
+            <p class="title">Useless Conversions</p>
             <nav>
                 <a href="/">Home</a>
-                <a id="sign-out-link" href="auth">Sign Out</a>
+                <a id="sign-out-link" href="../auth">Sign Out</a>
             </nav>
         </header>
 
-        <main>
+        <main class="profile-layout">
             <section>
                 <div class="profile-container">
                     <form id="profile-form" class="profile-form">
@@ -87,7 +90,12 @@
                 </div>
             </section>
             <section id="profile-details">
-                <ul id="profile-list"></ul>
+                <ul id="profile-list" class="profile-data"></ul>
+                <ul id="logged-list" class="logged-list">
+                    <li>sdad</li>
+                    <li>sdsds</li>
+                    <li>sdsd</li>
+                </ul>
             </section>
         </main>
     </body>
