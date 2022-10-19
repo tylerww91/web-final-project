@@ -5,7 +5,7 @@
     background-image: URL(/assets/background.jpg);
     background-size: cover;
     overflow-y: scroll;
-    border: 10px solid brown;
+    border: 10px solid rgb(3, 63, 6);
     padding: 20px;
     /* box-shadow: 0px 0px 10px 0px black; */
 }
@@ -25,4 +25,6 @@ li {
     padding: 10px;
     border: 10px;
     /* background: rgb(91, 5, 255); */
+    border-bottom: dotted;
+    font-size: 25px;
 }

@@ -1,6 +1,6 @@
 main {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 300px 200px 1fr;
     gap: 50px;
 }
 
@@ -20,5 +20,19 @@ main {
 }
 
 .logged-list {
-    background-color: aqua;
+    /* background-color: aqua; */
+    margin-top: 50px;
+}
+
+/* .image {
+    display: flex;
+    margin-bottom: 100px;
+} */
+
+.profile-post-title {
+    font-size: 2rem;
+}
+
+.profile-data {
+    margin-bottom: 400px;
 }

@@ -2,19 +2,21 @@ import '../auth/user.js';
 import { getProfile, updateProfile } from '../fetch-utils.js';
 //add to fetch after merge//
 import { uploadImage } from '../fetch-utils.js';
-import { getUser } from '../fetch-utils.js';
-import { renderPosts, renderProfile } from '../render-utils.js';
+import { getUser, getProfilePosts } from '../fetch-utils.js';
+import { renderProfilePosts, renderProfile } from '../render-utils.js';
 
 const errorDisplay = document.getElementById('error-display');
 const profileForm = document.getElementById('profile-form');
 const uploadButton = document.getElementById('avatar-input');
 const previewImage = document.getElementById('preview-image');
 const profileList = document.getElementById('profile-list');
+const profilePosts = document.getElementById('logged-list');
 
 let error = null;
 let user = getUser();
 let profile = null;
 let profiles = [];
+let posts = [];
 
 window.addEventListener('load', async () => {
     const response = await getProfile(user.id);
@@ -27,6 +29,18 @@ window.addEventListener('load', async () => {
     }
     if (profile) {
         displayProfile();
+    }
+
+    const response2 = await getProfilePosts(user.id);
+
+    error = response2.error;
+    posts = response2.data;
+
+    if (error) {
+        displayError();
+    }
+    if (posts) {
+        displayProfilePosts();
     }
 });
 
@@ -59,7 +73,7 @@ profileForm.addEventListener('submit', async (e) => {
     if (error) {
         displayError();
     } else {
-        // location.assign('/');
+        location.assign('/');
     }
 });
 
@@ -85,4 +99,12 @@ function displayProfile() {
     const profileEl = renderProfile(profile);
     profileList.append(profileEl);
     // }
+}
+
+function displayProfilePosts() {
+    profilePosts.innerHTML = '';
+    for (const post of posts) {
+        const profilePostEl = renderProfilePosts(post);
+        profilePosts.append(profilePostEl);
+    }
 }
