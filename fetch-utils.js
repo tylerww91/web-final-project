@@ -33,8 +33,6 @@ export async function createPost(post) {
 }
 
 export async function getItems() {
-    console.log('firing');
-
     return await client.from('conversion').select('*').order('title');
 }
 
@@ -83,4 +81,12 @@ export async function getProfilePosts(id) {
         .select('*')
         .order('created_at', { ascending: false })
         .eq('user_id', id);
+}
+
+export function onMessage(postId, handleMessage) {
+    client.from(`comments:post_id=eq.${postId}`).on('INSERT', handleMessage).subscribe();
+}
+
+export async function getComment(id) {
+    return await client.from('comments').select('*').eq('id', id).single();
 }

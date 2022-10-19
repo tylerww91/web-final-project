@@ -15,14 +15,13 @@ const profilePosts = document.getElementById('logged-list');
 let error = null;
 let user = getUser();
 let profile = null;
-let profiles = [];
+// let profiles = [];
 let posts = [];
 
 window.addEventListener('load', async () => {
     const response = await getProfile(user.id);
     error = response.error;
     profile = response.data;
-    console.log('profile', profile);
 
     if (error) {
         displayError();
@@ -73,7 +72,7 @@ profileForm.addEventListener('submit', async (e) => {
     if (error) {
         displayError();
     } else {
-        location.assign('/');
+        location.assign('/profile');
     }
 });
 
@@ -93,9 +92,6 @@ function displayError() {
 
 function displayProfile() {
     profileList.innerHTML = '';
-    // for (const profile of profiles) {
-    console.log('profile in display', profiles);
-
     const profileEl = renderProfile(profile);
     profileList.append(profileEl);
     // }

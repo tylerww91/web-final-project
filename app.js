@@ -1,30 +1,29 @@
 /* Imports */
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
-import { createPost, getItems, getPosts, getProfile } from '../fetch-utils.js';
+import { createPost, getItems, getPosts } from '../fetch-utils.js';
 import { renderConversionOption } from '../render-utils.js';
 import { renderPosts } from './render-utils.js';
-import { getUser } from './fetch-utils.js';
+// import { getUser } from './fetch-utils.js';
 
 /* Get DOM Elements */
 const errorDisplay = document.getElementById('error-display');
 const conversionForm = document.getElementById('conversion-form');
 const conversionSelect = document.getElementById('conversion-select');
 const conversionList = document.getElementById('conversion-list');
-const profileLink = document.getElementById('profile-link');
+// const profileLink = document.getElementById('profile-link');
 
 /* State */
-let user = getUser();
+// let user = getUser();
 let error = null;
 let items = null;
 let posts = [];
-let profileThing = null;
+// let profileThing = null;
 /* Events */
 
 window.addEventListener('load', async () => {
     const conversionOption = await getItems();
     items = conversionOption.data;
-    console.log('items', items);
 
     const conversionList = await getPosts();
     posts = conversionList.data;
@@ -34,17 +33,17 @@ window.addEventListener('load', async () => {
         displayPosts();
     }
 
-    const profileData = await getProfile(user.id);
-    profileThing = profileData.data;
-    console.log(profileThing);
-    const profile = {
-        user_name: profileThing.user_name,
-        image_url: profileThing.image_url,
-    };
+    // const profileData = await getProfile(user.id);
+    // profileThing = profileData.data;
+    // // console.log(profileThing);
+    // const profile = {
+    //     user_name: profileThing.user_name,
+    //     image_url: profileThing.image_url,
+    // };
 
-    if (profile) {
-        profileLink.textContent = `Profile (${profile.user_name}${profile.image_url})`;
-    }
+    // if (profile) {
+
+    // }
 });
 
 conversionForm.addEventListener('submit', async (e) => {

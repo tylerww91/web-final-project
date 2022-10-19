@@ -29,7 +29,7 @@ main {
 
 .logged-list {
     /* background-color: aqua; */
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 /* .image {
@@ -44,4 +44,23 @@ main {
 
 .profile-data {
     margin-bottom: 400px;
+}
+
+.purple {
+    color: purple;
+}
+.blue {
+    color: blue;
+}
+.green {
+    color: green;
+}
+.orange {
+    color: orange;
+}
+.red {
+    color: red;
+}
+.pink {
+    color: pink;
 }

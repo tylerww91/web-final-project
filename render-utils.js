@@ -37,6 +37,7 @@ export function renderProfile(profile) {
     const li = document.createElement('li');
     const h2 = document.createElement('h2');
     h2.textContent = profile.user_name;
+    h2.classList.add(`${profile.color}`);
 
     // const p = document.getElementById('p');
     // p.textContent = profile.color;
@@ -44,6 +45,9 @@ export function renderProfile(profile) {
     const img = document.createElement('img');
     img.src = profile.image_url;
     img.classList.add('avatar-image');
+    if (profile.image_url.length < 111) {
+        img.src = '/assets/user-avatar.png';
+    }
 
     li.append(h2, img);
     return li;
