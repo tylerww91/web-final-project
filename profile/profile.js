@@ -15,7 +15,7 @@ const profilePosts = document.getElementById('logged-list');
 let error = null;
 let user = getUser();
 let profile = null;
-let profiles = [];
+// let profiles = [];
 let posts = [];
 
 window.addEventListener('load', async () => {
@@ -92,9 +92,6 @@ function displayError() {
 
 function displayProfile() {
     profileList.innerHTML = '';
-    // for (const profile of profiles) {
-    console.log('profile in display', profiles);
-
     const profileEl = renderProfile(profile);
     profileList.append(profileEl);
     // }

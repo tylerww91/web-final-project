@@ -33,8 +33,6 @@ export async function createPost(post) {
 }
 
 export async function getItems() {
-    console.log('firing');
-
     return await client.from('conversion').select('*').order('title');
 }
 

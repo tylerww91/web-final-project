@@ -1,17 +1,17 @@
 /* Imports */
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
-import { createPost, getItems, getPosts, getProfile } from '../fetch-utils.js';
+import { createPost, getItems, getPosts } from '../fetch-utils.js';
 import { renderConversionOption } from '../render-utils.js';
 import { renderPosts } from './render-utils.js';
-import { getUser } from './fetch-utils.js';
+// import { getUser } from './fetch-utils.js';
 
 /* Get DOM Elements */
 const errorDisplay = document.getElementById('error-display');
 const conversionForm = document.getElementById('conversion-form');
 const conversionSelect = document.getElementById('conversion-select');
 const conversionList = document.getElementById('conversion-list');
-const profileLink = document.getElementById('profile-link');
+// const profileLink = document.getElementById('profile-link');
 
 /* State */
 // let user = getUser();
@@ -24,7 +24,6 @@ let posts = [];
 window.addEventListener('load', async () => {
     const conversionOption = await getItems();
     items = conversionOption.data;
-    console.log('items', items);
 
     const conversionList = await getPosts();
     posts = conversionList.data;
