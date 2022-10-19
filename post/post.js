@@ -1,6 +1,6 @@
 /* imports */
 import '../auth/user.js';
-import { getPost, createComment } from '../fetch-utils.js';
+import { getPost, createComment, onMessage, getComment } from '../fetch-utils.js';
 import { renderComment } from '../render-utils.js';
 /*dom elements */
 const errorDisplay = document.getElementById('error-display');
@@ -28,10 +28,26 @@ window.addEventListener('load', async () => {
 
     if (error) {
         // location.replace('/');
+    } else {
+        displayPost();
+        displayComments();
     }
+    onMessage(post.id, async (payload) => {
+        const commentId = payload.new.id;      
+        const postResponse = await getComment(commentId);
 
-    displayPost();
-    displayComments();
+        error = postResponse.error;
+
+        if (error) {
+            displayError();
+        } else {
+            const comment = postResponse.data;
+            post.comments.unshift(comment);
+            displayComments();
+            //scroll in to view?//
+        }
+    });
+
 
 });
 
