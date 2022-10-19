@@ -4,13 +4,21 @@ main {
     gap: 50px;
 }
 
+.profile-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 50px;
+}
+
 #profile-details {
     width: 1000px;
     height: 700px;
-    background: purple;
-
+    background: var(--offset-color);
+    border: 1px solid white;
     display: grid;
     grid-template-rows: 150px 1fr;
+    padding: 20px;
+    overflow: scroll;
 }
 .avatar-image {
     width: 80px;
@@ -31,6 +39,7 @@ main {
 
 .profile-post-title {
     font-size: 2rem;
+    text-decoration: underline;
 }
 
 .profile-data {
