@@ -22,7 +22,6 @@ window.addEventListener('load', async () => {
     const response = await getProfile(user.id);
     error = response.error;
     profile = response.data;
-    console.log('profile', profile);
 
     if (error) {
         displayError();
@@ -73,7 +72,7 @@ profileForm.addEventListener('submit', async (e) => {
     if (error) {
         displayError();
     } else {
-        location.assign('/');
+        location.assign('/profile');
     }
 });
 

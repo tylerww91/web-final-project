@@ -14,11 +14,11 @@ const conversionList = document.getElementById('conversion-list');
 const profileLink = document.getElementById('profile-link');
 
 /* State */
-let user = getUser();
+// let user = getUser();
 let error = null;
 let items = null;
 let posts = [];
-let profileThing = null;
+// let profileThing = null;
 /* Events */
 
 window.addEventListener('load', async () => {
@@ -34,17 +34,17 @@ window.addEventListener('load', async () => {
         displayPosts();
     }
 
-    const profileData = await getProfile(user.id);
-    profileThing = profileData.data;
-    console.log(profileThing);
-    const profile = {
-        user_name: profileThing.user_name,
-        image_url: profileThing.image_url,
-    };
+    // const profileData = await getProfile(user.id);
+    // profileThing = profileData.data;
+    // // console.log(profileThing);
+    // const profile = {
+    //     user_name: profileThing.user_name,
+    //     image_url: profileThing.image_url,
+    // };
 
-    if (profile) {
-        profileLink.textContent = `Profile (${profile.user_name}${profile.image_url})`;
-    }
+    // if (profile) {
+
+    // }
 });
 
 conversionForm.addEventListener('submit', async (e) => {
