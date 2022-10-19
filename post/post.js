@@ -32,6 +32,7 @@ window.addEventListener('load', async () => {
 
     displayPost();
     displayComments();
+
 });
 
 commentForm.addEventListener('submit', async (e) => {

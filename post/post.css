@@ -1,0 +1,12 @@
+main {
+    display: grid;
+    grid-template-columns: 40% 60% 5%;
+}
+
+.details-container {
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: center;
+    align-content: center;
+}
+
