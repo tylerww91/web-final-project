@@ -28,7 +28,7 @@ window.addEventListener('load', async () => {
     const response = await getPost(id);
     error = response.error;
     post = response.data;
-
+    console.log(`window load`, response.data);
     if (error) {
         // location.replace('/');
     } else {
@@ -36,9 +36,9 @@ window.addEventListener('load', async () => {
         displayComments();
     }
     onMessage(post.id, async (payload) => {
-        const commentId = payload.new.id;      
+        const commentId = payload.new.id;
         const postResponse = await getComment(commentId);
-        console.log(postResponse);
+        console.log('onMessage', postResponse);
         error = postResponse.error;
 
         if (error) {
@@ -50,8 +50,6 @@ window.addEventListener('load', async () => {
             //scroll in to view?//
         }
     });
-
-
 });
 
 commentForm.addEventListener('submit', async (e) => {
@@ -80,8 +78,9 @@ commentForm.addEventListener('submit', async (e) => {
 function displayComments() {
     commentList.innerHTML = '';
 
+    console.log(post.comments);
     for (const comment of post.comments) {
-        const commentEl = renderComment(comment, profile);
+        const commentEl = renderComment(comment);
         commentList.append(commentEl);
     }
 }

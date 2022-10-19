@@ -43,7 +43,7 @@ export async function getPosts() {
 export async function getPost(id) {
     return await client
         .from('conv-posts')
-        .select(`*, comments(*)`)
+        .select('*, comments(*,profiles(*))')
         .eq('id', id)
         .order('created_at', { foreignTable: 'comments', ascending: false })
         .single();
@@ -88,5 +88,9 @@ export function onMessage(postId, handleMessage) {
 }
 
 export async function getComment(id) {
-    return await client.from('comments').select('*').eq('id', id).single();
+    return await client
+        .from('comments')
+        .select('*, user_id: profiles(user_id, user_name, image_url, color)')
+        .eq('id', id)
+        .single();
 }
