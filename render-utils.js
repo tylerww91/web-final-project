@@ -31,9 +31,11 @@ export function renderComment(comment) {
     const li = document.createElement('li');
     // li.textContent = comment.text;
 
-    console.log(comment);
     const h2 = document.createElement('h2');
     h2.textContent = comment.profiles.user_name;
+    if (!comment.profiles.user_name) {
+        h2.textContent = comment.user_name;
+    }
 
     const p = document.createElement('p');
     p.textContent = comment.text;

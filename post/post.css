@@ -10,3 +10,19 @@ main {
     align-content: center;
 }
 
+li {
+    background-color: var(--placeholder-color);
+    height: 30%;
+    width: 80%;
+    box-sizing: content-box;
+    /* padding-bottom: ; */
+}
+h2 {
+    size: 10px;
+}
+
+.comment-container {
+    overflow-y: scroll;
+    height: 700px;
+    width: 1000px;
+}

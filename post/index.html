@@ -32,7 +32,7 @@
         <link rel="stylesheet" href="/styles/form.css" />
         <link rel="stylesheet" href="/styles/conversions.css" />
         <link rel="stylesheet" href="/styles/profile.css" />
-        <link rel="stylesheet" href="/post/post.css">
+        <link rel="stylesheet" href="/post/post.css" />
         <!-- add link for page specific css -->
     </head>
 
@@ -55,16 +55,17 @@
                 <p id="error-display"></p>
                 <form id="comment-form" class="comment-form">
                     <textarea
-                    type="text"
-                    id="comment-textarea"
-                    class="comment-textarea"
-                    name="comment"
-                    required
+                        type="text"
+                        id="comment-textarea"
+                        class="comment-textarea"
+                        name="comment"
+                        required
                     ></textarea>
                     <button id="comment-button" class="comment-button">Submit</button>
-                </form>   
+                </form>
             </section>
-            <ul id="comment-list"></ul>
+
+            <ul id="comment-list" class="comment-container"></ul>
         </main>
     </body>
 </html>
