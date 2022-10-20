@@ -13,7 +13,6 @@ const commentList = document.getElementById('comment-list');
 /* state */
 let error = null;
 let post = null;
-let profile = null;
 
 const user = getUser();
 /*event listener*/
@@ -28,7 +27,7 @@ window.addEventListener('load', async () => {
     const response = await getPost(id);
     error = response.error;
     post = response.data;
-    console.log(`window load`, response.data);
+
     if (error) {
         // location.replace('/');
     } else {
@@ -38,7 +37,7 @@ window.addEventListener('load', async () => {
     onMessage(post.id, async (payload) => {
         const commentId = payload.new.id;
         const postResponse = await getComment(commentId);
-        console.log('onMessage', postResponse);
+
         error = postResponse.error;
 
         if (error) {
@@ -63,6 +62,7 @@ commentForm.addEventListener('submit', async (e) => {
     };
 
     const response = await createComment(insertComment);
+
     error = response.error;
 
     if (error) {
@@ -78,7 +78,6 @@ commentForm.addEventListener('submit', async (e) => {
 function displayComments() {
     commentList.innerHTML = '';
 
-    console.log(post.comments);
     for (const comment of post.comments) {
         const commentEl = renderComment(comment);
         commentList.append(commentEl);

@@ -11,6 +11,9 @@ const errorDisplay = document.getElementById('error-display');
 const conversionForm = document.getElementById('conversion-form');
 const conversionSelect = document.getElementById('conversion-select');
 const conversionList = document.getElementById('conversion-list');
+const submitButton = document.getElementById('submit-button');
+const profSound = new Audio('/assets/good-news-everyone.mp3');
+
 // const profileLink = document.getElementById('profile-link');
 
 /* State */
@@ -50,7 +53,6 @@ conversionForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const formData = new FormData(conversionForm);
-
     const refTitle = formData.get('title');
     const refWeight = formData.get('weight');
 
@@ -112,6 +114,10 @@ conversionForm.addEventListener('submit', async (e) => {
         posts = postList.data;
         displayPosts();
     }
+});
+
+submitButton.addEventListener('click', async () => {
+    profSound.play();
 });
 
 /* Display Functions */
