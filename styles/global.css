@@ -29,7 +29,7 @@ body {
 
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
 
     background-color: var(--header-background);
     box-shadow: 0 100px 100px rgba(177, 177, 177, 0.383), 0 15px 10px rgba(15, 15, 15, 0.554);
@@ -47,7 +47,7 @@ body {
 
 .page-header nav {
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 
 main {
