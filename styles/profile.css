@@ -30,14 +30,8 @@ main {
 }
 
 .logged-list {
-    /* background-color: aqua; */
     margin-top: 100px;
 }
-
-/* .image {
-    display: flex;
-    margin-bottom: 100px;
-} */
 
 .profile-post-title {
     font-size: 2rem;
@@ -75,7 +69,6 @@ main {
     position: relative;
     display: block;
     margin: auto;
-    /* transition: 150ms; */
     background-color: rgb(255, 221, 163);
     margin-top: 20px;
     padding: 0px 5px;
