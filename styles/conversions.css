@@ -50,6 +50,7 @@ li {
     padding-bottom: 40px;
     background-size: cover;
     background-image: URL(/assets/blackboard.png);
+    box-shadow: 10px 10px 5px black;
 }
 
 .title {
