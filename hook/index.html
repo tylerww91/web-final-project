@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>Useful Conversions</title>
+        <link rel="icon" type="image/x-icon" href="/assets/color-scheme/favicon.png" />
+
+        <!-- js -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
+
+        <script type="module" src="hook.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="/styles/form.css" />
+        <link rel="stylesheet" href="/styles/conversions.css" />
+        <link rel="stylesheet" href="/styles/profile.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- add link for page specific css -->
+    </head>
+
+    <body>
+        <header class="page-header">
+            <img class="logo" src="/assets/color-scheme/favicon.png" alt="logo" />
+            <p class="title">Useless Conversions</p>
+            <nav>
+                <a href="/">Home</a>
+                <a id="profile-link" href="/profile">Profile</a>
+                <a id="sign-out-link" href="/auth/">Sign Out</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="conversion-section">
+                <h2>Conversion Form</h2>
+                <form id="conversion-form">
+                    <div>Title</div>
+                    <input type="text" class="title-input" id="title-input" name="title" required />
+
+                    <div>Weight (lbs)</div>
+                    <input
+                        type="text"
+                        id="weight-input"
+                        class="weight-input"
+                        name="weight"
+                        required
+                    />
+
+                    <div>Conversion factor</div>
+                    <select
+                        name="conversion"
+                        id="conversion-select"
+                        class="conversion-select"
+                    ></select>
+
+                    <button id="submit-button" class="submit-button">Submit</button>
+                </form>
+                <p id="error-display"></p>
+            </section>
+            <div class="image"><img src="./assets/professor.png" /></div>
+            <section id="logged-section">
+                <p id="conversion-result"></p>
+                <p id="conversion-result-2"></p>
+                <p id="conversion-result-3"></p>
+                <div class="conversion-container">
+                    <ul id="conversion-list" class="conversion-list">
+                        <li>kevin's weight in gold</li>
+                        <li>kevin's weight in gold</li>
+                        <li>kevin's weight in gold</li>
+                        <li>kevin's weight in gold</li>
+                        <li>kevin's weight in gold</li>
+                        <li>kevin's weight in gold</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
