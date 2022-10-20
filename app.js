@@ -14,14 +14,11 @@ const conversionList = document.getElementById('conversion-list');
 const submitButton = document.getElementById('submit-button');
 const profSound = new Audio('/assets/good-news-everyone.mp3');
 
-// const profileLink = document.getElementById('profile-link');
-
 /* State */
-// let user = getUser();
 let error = null;
 let items = null;
 let posts = [];
-// let profileThing = null;
+
 /* Events */
 
 window.addEventListener('load', async () => {
@@ -82,16 +79,14 @@ conversionForm.addEventListener('submit', async (e) => {
     const post = {
         title: refTitle,
         weight: refWeight,
-        // conversion: conversionSelect.value,
         weight_factor: factorWeight,
         result_1: x,
         result_2: x2,
         factor_id: factorId,
     };
 
-    // console.log(post);
     const response = await createPost(post);
-    //   conversionForm.error = response.error;
+
     conversionForm.reset();
     error = response.error;
 
