@@ -94,3 +94,7 @@ export async function getComment(id) {
         .eq('id', id)
         .single();
 }
+
+export async function getConversion(id) {
+    return await client.from('conversion').select('*').eq('id', id).single();
+}
