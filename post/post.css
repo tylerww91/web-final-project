@@ -15,7 +15,6 @@ li {
     height: 30%;
     width: 80%;
     box-sizing: content-box;
-  
 }
 h2 {
     size: 10px;
@@ -28,7 +27,7 @@ h2 {
 }
 
 li h2 {
-    margin-top: -10px;
+    margin-top: -30px;
 }
 .post-title {
     font-size: 2.5em;
