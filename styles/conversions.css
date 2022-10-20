@@ -30,22 +30,37 @@ li {
     border: 10px;
     /* background: rgb(91, 5, 255); */
     border-bottom: dotted;
-    font-size: 25px;
+    font-size: 28px;
     margin: 50px 50px;
 }
 
 .image {
     z-index: 1;
     padding-top: 20px;
+    margin-top: 110px;
 }
 
 .conversion-container {
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 80px;
     height: 800px;
     width: 1200px;
     padding-top: 40px;
     padding-bottom: 40px;
     background-size: cover;
     background-image: URL(/assets/blackboard.png);
+}
+
+.title {
+    font-size: em;
+}
+
+.form-header {
+    text-align: center;
+}
+
+.conversion-header {
+    text-decoration: underline;
+    font-size: 1.4em;
 }

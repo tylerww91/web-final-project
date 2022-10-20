@@ -13,6 +13,7 @@ export function renderPosts(post) {
 
     const p = document.createElement('p');
     p.textContent = `For ${post.title} at ${post.weight} lbs...`;
+    p.classList.add('conversion-header');
 
     const p2 = document.createElement('p');
     p2.textContent = post.result_1;
