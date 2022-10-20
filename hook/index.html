@@ -33,6 +33,8 @@
         <link rel="stylesheet" href="/styles/conversions.css" />
         <link rel="stylesheet" href="/styles/profile.css" />
 
+        <link rel="stylesheet" href="hook.css" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -54,46 +56,17 @@
             </nav>
         </header>
 
-        <main>
-            <section id="conversion-section">
-                <h2>Conversion Form</h2>
-                <form id="conversion-form">
-                    <div>Title</div>
-                    <input type="text" class="title-input" id="title-input" name="title" required />
-
-                    <div>Weight (lbs)</div>
-                    <input
-                        type="text"
-                        id="weight-input"
-                        class="weight-input"
-                        name="weight"
-                        required
-                    />
-
-                    <div>Conversion factor</div>
-                    <select
-                        name="conversion"
-                        id="conversion-select"
-                        class="conversion-select"
-                    ></select>
-
-                    <button id="submit-button" class="submit-button">Submit</button>
-                </form>
-                <p id="error-display"></p>
-            </section>
-            <div class="image"><img src="./assets/professor.png" /></div>
+        <main class="main-hook">
             <section id="logged-section">
-                <p id="conversion-result"></p>
-                <p id="conversion-result-2"></p>
-                <p id="conversion-result-3"></p>
                 <div class="conversion-container">
                     <ul id="conversion-list" class="conversion-list">
-                        <li>kevin's weight in gold</li>
-                        <li>kevin's weight in gold</li>
-                        <li>kevin's weight in gold</li>
-                        <li>kevin's weight in gold</li>
-                        <li>kevin's weight in gold</li>
-                        <li>kevin's weight in gold</li>
+                        <p class="greeting">Because you've always wanted to know:</p>
+                        <p id="conversion-header" class="conversion-header"></p>
+                        <p id="conversion-1" class="conversion-p"></p>
+                        <p id="conversion-2" class="conversion-p"></p>
+                        <button id="continue-button" class="continue-button">
+                            Click to continue
+                        </button>
                     </ul>
                 </div>
             </section>
