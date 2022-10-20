@@ -23,7 +23,7 @@
     position: relative;
     display: block;
     margin: auto;
-    /* transition: 150ms; */
+
     background-color: rgb(255, 221, 163);
 }
 .continue-button:hover {
