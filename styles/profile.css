@@ -19,23 +19,19 @@ main {
     grid-template-rows: 150px 1fr;
     padding: 20px;
     overflow: scroll;
+    box-shadow: 10px 10px 5px black;
 }
 .avatar-image {
     width: 80px;
     border-radius: 50%;
     height: 80px;
     object-fit: cover;
+    box-shadow: 5px 5px 5px rgb(32, 32, 32);
 }
 
 .logged-list {
-    /* background-color: aqua; */
     margin-top: 100px;
 }
-
-/* .image {
-    display: flex;
-    margin-bottom: 100px;
-} */
 
 .profile-post-title {
     font-size: 2rem;
@@ -47,20 +43,46 @@ main {
 }
 
 .purple {
-    color: purple;
+    color: rgb(110, 1, 110);
 }
 .blue {
-    color: blue;
+    color: rgb(11, 11, 189);
 }
 .green {
-    color: green;
+    color: rgb(4, 130, 4);
 }
 .orange {
-    color: orange;
+    color: rgb(201, 111, 0);
 }
 .red {
-    color: red;
+    color: rgb(175, 0, 0);
 }
 .pink {
-    color: pink;
+    color: rgb(247, 3, 194);
+}
+
+.conversion-link {
+    height: 60px;
+    width: 310px;
+    border-radius: 1em;
+    font-size: 2em;
+    position: relative;
+    display: block;
+    margin: auto;
+    background-color: rgb(255, 221, 163);
+    margin-top: 20px;
+    padding: 0px 5px;
+}
+.conversion-link:hover {
+    transition: 2000ms;
+    box-shadow: 0px 0px 15px 0px rgb(255, 255, 255);
+    background-color: rgb(108, 75, 0);
+    color: white;
+    cursor: pointer;
+}
+
+.conversion-link:active {
+    transform: scale(0.9);
+    box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+    transition: 150ms;
 }

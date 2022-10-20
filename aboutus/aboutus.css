@@ -6,6 +6,7 @@ body {
 
 section {
     display: grid;
+    grid-template-columns: 1000px;
 }
 
 .dev-card {
@@ -15,13 +16,12 @@ section {
 }
 .andrew-style {
     color: rgb(255, 255, 255);
-    background-color: rgb(66, 9, 31);
 }
 
 .dev {
     height: 250px;
-    width: 200px;
+
     border: 10px;
     border-style: solid;
-    border-color: green;
+    border-color: rgb(255, 255, 255);
 }

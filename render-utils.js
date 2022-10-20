@@ -13,6 +13,7 @@ export function renderPosts(post) {
 
     const p = document.createElement('p');
     p.textContent = `For ${post.title} at ${post.weight} lbs...`;
+    p.classList.add('conversion-header');
 
     const p2 = document.createElement('p');
     p2.textContent = post.result_1;
@@ -29,7 +30,22 @@ export function renderPosts(post) {
 
 export function renderComment(comment) {
     const li = document.createElement('li');
-    li.textContent = comment.text;
+
+    const h2 = document.createElement('h2');
+    h2.textContent = comment.profiles.user_name;
+    if (!comment.profiles.user_name) {
+        h2.textContent = comment.user_name;
+    }
+
+    const p = document.createElement('p');
+    p.textContent = comment.text;
+    p.classList.add(`${comment.profiles.color}`);
+
+    const img = document.createElement('img');
+    img.src = comment.profiles.image_url;
+    img.classList.add('avatar-image');
+
+    li.append(h2, img, p);
     return li;
 }
 
@@ -38,9 +54,6 @@ export function renderProfile(profile) {
     const h2 = document.createElement('h2');
     h2.textContent = profile.user_name;
     h2.classList.add(`${profile.color}`);
-
-    // const p = document.getElementById('p');
-    // p.textContent = profile.color;
 
     const img = document.createElement('img');
     img.src = profile.image_url;

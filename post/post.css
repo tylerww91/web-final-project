@@ -1,6 +1,6 @@
 main {
     display: grid;
-    grid-template-columns: 40% 60% 5%;
+    grid-template-columns: 40% 60%;
 }
 
 .details-container {
@@ -10,3 +10,42 @@ main {
     align-content: center;
 }
 
+li {
+    background-color: var(--placeholder-color);
+    height: 30%;
+    width: 80%;
+    box-sizing: content-box;
+}
+h2 {
+    size: 10px;
+}
+
+.comment-container {
+    overflow-y: scroll;
+    height: 700px;
+    width: 1015px;
+}
+
+li h2 {
+    margin-top: -35px;
+}
+.post-title {
+    font-size: 2.5em;
+    letter-spacing: 3px;
+}
+
+.result {
+    font-size: 1.5em;
+    letter-spacing: 1.5px;
+    margin-left: 0px;
+}
+.result-1 {
+    font-size: 1.5em;
+    letter-spacing: 1.5px;
+    margin-left: 30px;
+}
+.result-2 {
+    font-size: 1.5em;
+    letter-spacing: 1.5px;
+    margin-left: 0px;
+}

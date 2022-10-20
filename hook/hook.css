@@ -1,0 +1,72 @@
+.conversion-p {
+    font-size: 2rem;
+    letter-spacing: 3px;
+}
+
+.conversion-header {
+    letter-spacing: 3px;
+
+    font-size: 2.5rem;
+}
+
+.greeting {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.continue-button {
+    height: 60px;
+    width: 300px;
+    border-radius: 1em;
+    font-size: 2em;
+    position: relative;
+    display: block;
+    margin: auto;
+
+    background-color: rgb(255, 221, 163);
+}
+.continue-button:hover {
+    transition: 2000ms;
+    box-shadow: 0px 0px 15px 0px rgb(255, 255, 255);
+    background-color: rgb(108, 75, 0);
+    color: white;
+}
+
+.continue-button:active {
+    transform: scale(0.9);
+    box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+    transition: 150ms;
+}
+
+.main-hook {
+    display: grid;
+    grid-template-columns: 1000px 1fr;
+    justify-items: center;
+}
+
+#screen-section {
+    display: grid;
+}
+
+.screen-container {
+    background-image: url(/assets/screen.png);
+    background-repeat: no-repeat;
+    background-size: 102%;
+    height: 87%;
+    width: 72%;
+    margin-left: 145px;
+    margin-top: 147px;
+    padding-right: 30px;
+    display: grid;
+}
+
+.gif {
+    width: 88%;
+    margin-top: 35px;
+    margin-left: 51px;
+}
+
+.hook-container {
+    overflow: hidden;
+}

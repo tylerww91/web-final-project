@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>Useful Conversions</title>
+        <link rel="icon" type="image/x-icon" href="/assets/color-scheme/favicon.png" />
+
+        <!-- js -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
+
+        <script type="module" src="hook.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="/styles/form.css" />
+        <link rel="stylesheet" href="/styles/conversions.css" />
+        <link rel="stylesheet" href="/styles/profile.css" />
+
+        <link rel="stylesheet" href="hook.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- add link for page specific css -->
+    </head>
+
+    <body>
+        <header class="page-header">
+            <img class="logo" src="/assets/color-scheme/favicon.png" alt="logo" />
+            <p class="title">Useless Conversions</p>
+            <nav>
+                <a href="/">Home</a>
+                <a id="profile-link" href="/profile">Profile</a>
+                <a id="about-us-link" href="../aboutus/"> About Us!</a>
+                <a id="sign-out-link" href="/auth/">Sign Out</a>
+            </nav>
+        </header>
+
+        <main class="main-hook">
+            <section id="logged-section">
+                <div class="conversion-container">
+                    <ul id="conversion-list" class="conversion-list hook-container">
+                        <p class="greeting">Because you've always wanted to know:</p>
+                        <p id="conversion-header" class="conversion-header"></p>
+                        <p id="conversion-1" class="conversion-p"></p>
+                        <p id="conversion-2" class="conversion-p"></p>
+                        <button id="continue-button" class="continue-button">
+                            Click to continue
+                        </button>
+                    </ul>
+                </div>
+            </section>
+            <section id="screen-section">
+                <div class="screen-container">
+                    <img class="gif" src="../assets/boom-mind-blown.gif" alt="" />
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

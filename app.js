@@ -11,14 +11,14 @@ const errorDisplay = document.getElementById('error-display');
 const conversionForm = document.getElementById('conversion-form');
 const conversionSelect = document.getElementById('conversion-select');
 const conversionList = document.getElementById('conversion-list');
-// const profileLink = document.getElementById('profile-link');
+const submitButton = document.getElementById('submit-button');
+const profSound = new Audio('/assets/good-news-everyone.mp3');
 
 /* State */
-// let user = getUser();
 let error = null;
 let items = null;
 let posts = [];
-// let profileThing = null;
+
 /* Events */
 
 window.addEventListener('load', async () => {
@@ -32,25 +32,12 @@ window.addEventListener('load', async () => {
         displayConversionOptions();
         displayPosts();
     }
-
-    // const profileData = await getProfile(user.id);
-    // profileThing = profileData.data;
-    // // console.log(profileThing);
-    // const profile = {
-    //     user_name: profileThing.user_name,
-    //     image_url: profileThing.image_url,
-    // };
-
-    // if (profile) {
-
-    // }
 });
 
 conversionForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const formData = new FormData(conversionForm);
-
     const refTitle = formData.get('title');
     const refWeight = formData.get('weight');
 
@@ -92,16 +79,14 @@ conversionForm.addEventListener('submit', async (e) => {
     const post = {
         title: refTitle,
         weight: refWeight,
-        // conversion: conversionSelect.value,
         weight_factor: factorWeight,
         result_1: x,
         result_2: x2,
         factor_id: factorId,
     };
 
-    // console.log(post);
     const response = await createPost(post);
-    //   conversionForm.error = response.error;
+
     conversionForm.reset();
     error = response.error;
 
@@ -112,6 +97,10 @@ conversionForm.addEventListener('submit', async (e) => {
         posts = postList.data;
         displayPosts();
     }
+});
+
+submitButton.addEventListener('click', async () => {
+    profSound.play();
 });
 
 /* Display Functions */

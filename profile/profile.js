@@ -11,11 +11,11 @@ const uploadButton = document.getElementById('avatar-input');
 const previewImage = document.getElementById('preview-image');
 const profileList = document.getElementById('profile-list');
 const profilePosts = document.getElementById('logged-list');
+const conversionLink = document.getElementById('conversion-link');
 
 let error = null;
 let user = getUser();
 let profile = null;
-// let profiles = [];
 let posts = [];
 
 window.addEventListener('load', async () => {
@@ -86,6 +86,11 @@ uploadButton.addEventListener('change', () => {
     }
 });
 
+conversionLink.addEventListener('click', () => {
+    location.replace('../');
+});
+
+// display
 function displayError() {
     errorDisplay.textContent = error.message;
 }
@@ -94,7 +99,6 @@ function displayProfile() {
     profileList.innerHTML = '';
     const profileEl = renderProfile(profile);
     profileList.append(profileEl);
-    // }
 }
 
 function displayProfilePosts() {

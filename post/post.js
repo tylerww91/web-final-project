@@ -1,6 +1,13 @@
 /* imports */
 import '../auth/user.js';
-import { getPost, createComment } from '../fetch-utils.js';
+import {
+    getPost,
+    createComment,
+    onMessage,
+    getComment,
+    getUser,
+    getProfile,
+} from '../fetch-utils.js';
 import { renderComment } from '../render-utils.js';
 /*dom elements */
 const errorDisplay = document.getElementById('error-display');
@@ -13,13 +20,16 @@ const commentList = document.getElementById('comment-list');
 /* state */
 let error = null;
 let post = null;
+
+const user = getUser();
+let profile = null;
 /*event listener*/
 
 window.addEventListener('load', async () => {
     const searchParams = new URLSearchParams(location.search);
     const id = searchParams.get('id');
     if (!id) {
-        // location.replace('/');
+        location.replace('/');
         return;
     }
     const response = await getPost(id);
@@ -27,31 +37,50 @@ window.addEventListener('load', async () => {
     post = response.data;
 
     if (error) {
-        // location.replace('/');
+        location.replace('/');
+    } else {
+        displayPost();
+        displayComments();
     }
+    onMessage(post.id, async (payload) => {
+        const commentId = payload.new.id;
+        const postResponse = await getComment(commentId);
 
-    displayPost();
-    displayComments();
+        error = postResponse.error;
 
+        if (error) {
+            displayError();
+        } else {
+            const comment = postResponse.data;
+            post.comments.unshift(comment);
+            displayComments();
+        }
+    });
 });
 
 commentForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    profile = await getProfile(user.id);
+    if (profile.data === null) {
+        alert('Please create a profile to post comments');
+        return;
+    }
+
     const formData = new FormData(commentForm);
     const insertComment = {
         text: formData.get('comment'),
         post_id: post.id,
+        user_id: user.id,
     };
 
     const response = await createComment(insertComment);
+
     error = response.error;
 
     if (error) {
         displayError();
     } else {
-        const comment = response.data;
-        post.comments.unshift(comment);
         displayComments();
         commentForm.reset();
     }

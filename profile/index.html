@@ -22,8 +22,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
+            href="https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&display=swap"
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
         />
 
         <!-- css -->
@@ -41,6 +41,7 @@
             <p class="title">Useless Conversions</p>
             <nav>
                 <a href="/">Home</a>
+                <a id="about-us-link" href="../aboutus/"> About Us!</a>
                 <a id="sign-out-link" href="../auth">Sign Out</a>
             </nav>
         </header>
@@ -49,7 +50,7 @@
             <section>
                 <div class="profile-container">
                     <form id="profile-form" class="profile-form">
-                        <h3>Profile **UPDATE**</h3>
+                        <h3>Profile Info</h3>
                         <input
                             name="username"
                             type="text"
@@ -61,10 +62,10 @@
                         <select name="color" id="color-select" class="color-select" required>
                             <option value="Pick" disabled selected>Choose a text color</option>
                             <option value="blue" class="blue">Blue</option>
-                            <option value="purple" class="pink">Purple</option>
+                            <option value="purple" class="purple">Purple</option>
                             <option value="green" class="green">Green</option>
                             <option value="red" class="red">Red</option>
-                            <option value="orange" class="pink">Orange</option>
+                            <option value="orange" class="orange">Orange</option>
                             <option value="pink" class="pink">Pink</option>
                         </select>
                         <label>
@@ -86,16 +87,13 @@
                             Update
                         </button>
                     </form>
+                    <button id="conversion-link" class="conversion-link">Make a conversion!</button>
                     <p id="error-display" class="error"></p>
                 </div>
             </section>
             <section id="profile-details">
                 <ul id="profile-list" class="profile-data"></ul>
-                <ul id="logged-list" class="logged-list">
-                    <li>sdad</li>
-                    <li>sdsds</li>
-                    <li>sdsd</li>
-                </ul>
+                <ul id="logged-list" class="logged-list"></ul>
             </section>
         </main>
     </body>
