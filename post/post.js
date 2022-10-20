@@ -27,7 +27,7 @@ window.addEventListener('load', async () => {
     const response = await getPost(id);
     error = response.error;
     post = response.data;
-    console.log('pageload line 30', post.comments);
+
     if (error) {
         // location.replace('/');
     } else {
@@ -37,7 +37,7 @@ window.addEventListener('load', async () => {
     onMessage(post.id, async (payload) => {
         const commentId = payload.new.id;
         const postResponse = await getComment(commentId);
-        console.log('line 40 realtime', postResponse.data);
+
         error = postResponse.error;
 
         if (error) {
@@ -62,7 +62,7 @@ commentForm.addEventListener('submit', async (e) => {
     };
 
     const response = await createComment(insertComment);
-    console.log('response console line 69', response.data);
+
     error = response.error;
 
     if (error) {
