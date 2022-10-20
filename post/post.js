@@ -29,7 +29,7 @@ window.addEventListener('load', async () => {
     const searchParams = new URLSearchParams(location.search);
     const id = searchParams.get('id');
     if (!id) {
-        // location.replace('/');
+        location.replace('/');
         return;
     }
     const response = await getPost(id);
@@ -37,7 +37,7 @@ window.addEventListener('load', async () => {
     post = response.data;
 
     if (error) {
-        // location.replace('/');
+        location.replace('/');
     } else {
         displayPost();
         displayComments();
@@ -54,7 +54,6 @@ window.addEventListener('load', async () => {
             const comment = postResponse.data;
             post.comments.unshift(comment);
             displayComments();
-            //scroll in to view?//
         }
     });
 });

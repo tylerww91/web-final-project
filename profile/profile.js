@@ -16,7 +16,6 @@ const conversionLink = document.getElementById('conversion-link');
 let error = null;
 let user = getUser();
 let profile = null;
-// let profiles = [];
 let posts = [];
 
 window.addEventListener('load', async () => {
@@ -100,7 +99,6 @@ function displayProfile() {
     profileList.innerHTML = '';
     const profileEl = renderProfile(profile);
     profileList.append(profileEl);
-    // }
 }
 
 function displayProfilePosts() {

@@ -35,18 +35,6 @@ window.addEventListener('load', async () => {
         displayConversionOptions();
         displayPosts();
     }
-
-    // const profileData = await getProfile(user.id);
-    // profileThing = profileData.data;
-    // // console.log(profileThing);
-    // const profile = {
-    //     user_name: profileThing.user_name,
-    //     image_url: profileThing.image_url,
-    // };
-
-    // if (profile) {
-
-    // }
 });
 
 conversionForm.addEventListener('submit', async (e) => {
