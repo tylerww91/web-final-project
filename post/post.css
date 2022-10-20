@@ -1,6 +1,6 @@
 main {
     display: grid;
-    grid-template-columns: 40% 60% 5%;
+    grid-template-columns: 40% 60%;
 }
 
 .details-container {
@@ -24,7 +24,7 @@ h2 {
 .comment-container {
     overflow-y: scroll;
     height: 700px;
-    width: 1000px;
+    width: 1015px;
 }
 
 li h2 {

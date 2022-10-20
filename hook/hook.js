@@ -18,7 +18,7 @@ let profile = null;
 window.addEventListener('load', async () => {
     profile = await getProfile(user.id);
 
-    const conversionId1 = getRandomNumber(29) + 1;
+    const conversionId1 = 31;
     const conversionId2 = getRandomNumber(29) + 1;
     const conversionData1 = await getConversion(conversionId1);
     const conversionData2 = await getConversion(conversionId2);
@@ -51,7 +51,7 @@ window.addEventListener('load', async () => {
     }
     randomTitle = `${conversion1.title} at ${conversion1.weight} pounds converted into a ${conversion2.title} at ${conversion2.weight} pounds...`;
     x = `${factorTitle} is equal to approximately ${x} ${factorPlural2}`;
-    x2 = `A ${factorTitle2} is equal to approximately ${x2} ${factorPlural}`;
+    x2 = `${factorTitle2} is equal to approximately ${x2} ${factorPlural}`;
 
     conversionHeader.textContent = randomTitle;
     conversionNum1.textContent = x;
