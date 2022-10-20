@@ -33,7 +33,6 @@ window.addEventListener('load', async () => {
     let x = conversion1.weight / conversion2.weight;
     let x2 = conversion2.weight / conversion1.weight;
 
-    // factorId = item.id;
     if (x < 0.0001) {
         x = x.toFixed(6);
         x2 = x2.toFixed(0);
