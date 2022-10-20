@@ -11,6 +11,7 @@ const uploadButton = document.getElementById('avatar-input');
 const previewImage = document.getElementById('preview-image');
 const profileList = document.getElementById('profile-list');
 const profilePosts = document.getElementById('logged-list');
+const conversionLink = document.getElementById('conversion-link');
 
 let error = null;
 let user = getUser();
@@ -86,6 +87,11 @@ uploadButton.addEventListener('change', () => {
     }
 });
 
+conversionLink.addEventListener('click', () => {
+    location.replace('../');
+});
+
+// display
 function displayError() {
     errorDisplay.textContent = error.message;
 }

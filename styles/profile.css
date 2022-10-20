@@ -64,3 +64,30 @@ main {
 .pink {
     color: pink;
 }
+
+.conversion-link {
+    height: 60px;
+    width: 310px;
+    border-radius: 1em;
+    font-size: 2em;
+    position: relative;
+    display: block;
+    margin: auto;
+    /* transition: 150ms; */
+    background-color: rgb(255, 221, 163);
+    margin-top: 20px;
+    padding: 0px 5px;
+}
+.conversion-link:hover {
+    transition: 2000ms;
+    box-shadow: 0px 0px 15px 0px rgb(255, 255, 255);
+    background-color: rgb(108, 75, 0);
+    color: white;
+    cursor: pointer;
+}
+
+.conversion-link:active {
+    transform: scale(0.9);
+    box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+    transition: 150ms;
+}

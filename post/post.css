@@ -30,3 +30,23 @@ h2 {
 li h2 {
     margin-top: -10px;
 }
+.post-title {
+    font-size: 2.5em;
+    letter-spacing: 3px;
+}
+
+.result {
+    font-size: 1.5em;
+    letter-spacing: 1.5px;
+    margin-left: 0px;
+}
+.result-1 {
+    font-size: 1.5em;
+    letter-spacing: 1.5px;
+    margin-left: 30px;
+}
+.result-2 {
+    font-size: 1.5em;
+    letter-spacing: 1.5px;
+    margin-left: 0px;
+}

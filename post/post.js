@@ -1,6 +1,13 @@
 /* imports */
 import '../auth/user.js';
-import { getPost, createComment, onMessage, getComment, getUser } from '../fetch-utils.js';
+import {
+    getPost,
+    createComment,
+    onMessage,
+    getComment,
+    getUser,
+    getProfile,
+} from '../fetch-utils.js';
 import { renderComment } from '../render-utils.js';
 /*dom elements */
 const errorDisplay = document.getElementById('error-display');
@@ -15,6 +22,7 @@ let error = null;
 let post = null;
 
 const user = getUser();
+let profile = null;
 /*event listener*/
 
 window.addEventListener('load', async () => {
@@ -53,6 +61,12 @@ window.addEventListener('load', async () => {
 
 commentForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    profile = await getProfile(user.id);
+    if (profile.data === null) {
+        alert('Please create a profile to post comments');
+        return;
+    }
 
     const formData = new FormData(commentForm);
     const insertComment = {
