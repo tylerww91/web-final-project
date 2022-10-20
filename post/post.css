@@ -26,3 +26,7 @@ h2 {
     height: 700px;
     width: 1000px;
 }
+
+li h2 {
+    margin-top: -10px;
+}
