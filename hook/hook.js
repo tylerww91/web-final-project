@@ -49,7 +49,7 @@ window.addEventListener('load', async () => {
         x = x.toFixed(0);
         x2 = x2.toFixed(6);
     }
-    randomTitle = `${conversion1.title} at ${conversion1.weight} pounds converted into a ${conversion2.title} at ${conversion2.weight} pounds...`;
+    randomTitle = `${conversion1.title} at ${conversion1.weight} pounds converted into ${conversion2.title} at ${conversion2.weight} pounds...`;
     x = `${factorTitle} is equal to approximately ${x} ${factorPlural2}`;
     x2 = `${factorTitle2} is equal to approximately ${x2} ${factorPlural}`;
 
