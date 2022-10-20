@@ -90,7 +90,7 @@ export function onMessage(postId, handleMessage) {
 export async function getComment(id) {
     return await client
         .from('comments')
-        .select('*, user_id: profiles(user_id, user_name, image_url, color)')
+        .select('*, profiles(user_id, user_name, image_url, color)')
         .eq('id', id)
         .single();
 }
