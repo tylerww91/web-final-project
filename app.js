@@ -74,7 +74,7 @@ conversionForm.addEventListener('submit', async (e) => {
     }
 
     x = `${refTitle} is equal to approximately ${x} ${factorPlural}`;
-    x2 = `A ${conversionSelect.value} is approximately ${x2} ${refTitle}s`;
+    x2 = `${conversionSelect.value} is approximately ${x2} ${refTitle}s`;
 
     const post = {
         title: refTitle,
