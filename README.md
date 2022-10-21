@@ -44,3 +44,5 @@ Professor - https://futurama.fandom.com/wiki/Fing-Longer?file=Finglonger.jpg
 mind blown gif - https://tenor.com/view/boom-mind-blown-mind-blowing-eyeglasses-gif-15569009
 
 projector screen - https://pixabay.com/vectors/screen-display-board-presentation-145601/
+
+chalkboard - https://pixabay.com/illustrations/blackboard-board-school-chalkboard-5639925/
